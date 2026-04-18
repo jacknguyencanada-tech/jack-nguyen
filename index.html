@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jack Nguyen — Supply Chain & Operations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f4efe6;
+    --bg2: #ede7dc;
+    --ink: #1c1714;
+    --ink2: #5a5450;
+    --gold: #9b6f3a;
+    --gold-lt: #c4904d;
+    --rule: #d5cfc6;
+    --white: #faf7f2;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Jost', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(244,239,230,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink2);
+    text-decoration: none;
+    transition: color 0.2s;
+    cursor: pointer;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 4rem 6rem 4rem;
+    border-right: 1px solid var(--rule);
+  }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.8rem;
+  }
+
+  .hero-name {
+    font-family: var(--serif);
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 2rem;
+  }
+
+  .hero-name em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+    color: var(--ink2);
+    max-width: 38ch;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+  }
+
+  .hero-cta-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 2rem;
+    background: var(--ink);
+    color: var(--bg);
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover { background: var(--gold); transform: translateY(-1px); }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 2rem;
+    background: transparent;
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--ink);
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 6rem 4rem;
+    gap: 2px;
+  }
+
+  .stat-row {
+    display: flex;
+    align-items: baseline;
+    gap: 1.2rem;
+    padding: 1.6rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .stat-row:first-child { border-top: 1px solid var(--rule); }
+
+  .stat-number {
+    font-family: var(--serif);
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    min-width: 90px;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+    color: var(--ink2);
+    line-height: 1.4;
+  }
+
+  .stat-label strong {
+    display: block;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.1rem;
+  }
+
+  /* SECTION */
+  section { padding: 7rem 4rem; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .section-num {
+    font-family: var(--serif);
+    font-size: 0.85rem;
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+  }
+
+  .section-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .about-text {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--ink);
+  }
+
+  .about-text em { font-style: italic; color: var(--gold); }
+
+  .about-details { display: flex; flex-direction: column; gap: 1.5rem; }
+
+  .detail-item {
+    padding: 1.4rem;
+    border-left: 2px solid var(--gold);
+    background: var(--white);
+  }
+
+  .detail-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+  }
+
+  .detail-val { font-size: 0.92rem; color: var(--ink2); line-height: 1.5; }
+  .detail-val strong { color: var(--ink); font-weight: 500; }
+
+  /* EXPERIENCE */
+  .experience { background: var(--bg2); }
+
+  .exp-list { display: flex; flex-direction: column; gap: 0; }
+
+  .exp-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2.5rem;
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .exp-item:first-child { border-top: 1px solid var(--rule); }
+
+  .exp-meta { padding-top: 0.15rem; }
+
+  .exp-period {
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+
+  .exp-company {
+    font-size: 0.82rem;
+    color: var(--ink2);
+    line-height: 1.4;
+  }
+
+  .exp-content {}
+
+  .exp-role {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+  }
+
+  .exp-points {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .exp-points li {
+    font-size: 0.9rem;
+    color: var(--ink2);
+    padding-left: 1.2rem;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .exp-points li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 0.8rem;
+  }
+
+  .exp-points li strong { color: var(--ink); font-weight: 500; }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+
+  .skill-card {
+    background: var(--white);
+    padding: 2.2rem 1.8rem;
+  }
+
+  .skill-icon {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .skill-name {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 400;
+    margin-bottom: 0.6rem;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.8rem;
+  }
+
+  .tag {
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    padding: 0.25rem 0.7rem;
+    background: var(--bg2);
+    color: var(--ink2);
+    border: 1px solid var(--rule);
+  }
+
+  .skill-desc { font-size: 0.85rem; color: var(--ink2); line-height: 1.55; }
+
+  /* CERTIFICATIONS */
+  .certs { background: var(--ink); color: var(--bg); }
+  .certs .section-title { color: var(--bg); }
+  .certs .section-rule { background: rgba(255,255,255,0.12); }
+  .certs .section-num { color: var(--gold-lt); }
+
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.08);
+  }
+
+  .cert-item {
+    background: var(--ink);
+    padding: 2rem 2.5rem;
+    border: none;
+    transition: background 0.2s;
+  }
+
+  .cert-item:hover { background: #2a2420; }
+
+  .cert-issuer {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-lt);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .cert-name {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--bg);
+    line-height: 1.35;
+    margin-bottom: 0.4rem;
+  }
+
+  .cert-date { font-size: 0.78rem; color: rgba(244,239,230,0.45); }
+
+  /* FRENCH PROJECT */
+  .french-project {
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fp-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .fp-text {}
+
+  .fp-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 0.35rem 0.9rem;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+
+  .fp-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3vw, 2.6rem);
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+  }
+
+  .fp-title em { font-style: italic; color: var(--gold); }
+
+  .fp-desc { font-size: 0.92rem; color: var(--ink2); line-height: 1.75; max-width: 40ch; }
+
+  .fp-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 320px;
+    border: 1px solid var(--rule);
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fp-flag {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    opacity: 0.06;
+  }
+
+  .fp-flag span {
+    flex: 1;
+    height: 100%;
+  }
+
+  .fp-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .fp-coming {
+    font-family: var(--serif);
+    font-size: 3.5rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .fp-sub {
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  /* EDUCATION */
+  .education { background: var(--bg2); }
+
+  .edu-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .edu-card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-top: 2px solid var(--gold);
+  }
+
+  .edu-degree {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 0.4rem;
+    line-height: 1.3;
+  }
+
+  .edu-school {
+    font-size: 0.85rem;
+    color: var(--gold);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.8rem;
+  }
+
+  .edu-gpa {
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--gold);
+    margin-bottom: 0.2rem;
+  }
+
+  .edu-gpa-label { font-size: 0.75rem; color: var(--ink2); letter-spacing: 0.08em; text-transform: uppercase; }
+
+  .edu-note {
+    margin-top: 1.2rem;
+    padding: 0.9rem 1rem;
+    background: var(--bg);
+    font-size: 0.82rem;
+    color: var(--ink2);
+    line-height: 1.5;
+    border-left: 2px solid var(--gold);
+  }
+
+  .edu-community { display: flex; flex-direction: column; gap: 1.2rem; padding-top: 0.5rem; }
+
+  .community-item {
+    padding: 1.2rem 1.5rem;
+    background: var(--white);
+    border-left: 2px solid var(--rule);
+  }
+
+  .community-item:hover { border-left-color: var(--gold); }
+
+  .community-title { font-weight: 500; font-size: 0.9rem; margin-bottom: 0.25rem; }
+  .community-desc { font-size: 0.82rem; color: var(--ink2); line-height: 1.5; }
+
+  /* CONTACT */
+  .contact {
+    background: var(--bg);
+    text-align: center;
+    padding: 8rem 4rem;
+  }
+
+  .contact-tagline {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 300;
+    font-style: italic;
+    max-width: 22ch;
+    margin: 0 auto 1rem;
+    line-height: 1.25;
+  }
+
+  .contact-sub {
+    font-size: 0.9rem;
+    color: var(--ink2);
+    margin-bottom: 3rem;
+  }
+
+  .contact-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink2);
+    text-decoration: none;
+    padding: 0.8rem 1.8rem;
+    border: 1px solid var(--rule);
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+  }
+
+  .contact-link:hover { border-color: var(--gold); color: var(--gold); }
+
+  .contact-link.linkedin {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+  }
+
+  .contact-link.linkedin:hover { background: var(--gold); border-color: var(--gold); }
+
+  footer {
+    padding: 2rem 4rem;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-name { font-family: var(--serif); font-size: 0.9rem; color: var(--ink2); }
+  .footer-loc { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink2); }
+
+  /* ANIMATIONS */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.2rem; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 5rem 1.5rem 3rem; border-right: none; border-bottom: 1px solid var(--rule); }
+    .hero-right { padding: 3rem 1.5rem; }
+    section { padding: 5rem 1.5rem; }
+    .about-grid, .fp-inner, .edu-block, .certs-grid { grid-template-columns: 1fr; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    .skills-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Jack Nguyen</a>
+  <ul class="nav-links">
+    <li><a onclick="goTo('experience')">Experience</a></li>
+    <li><a onclick="goTo('skills')">Skills</a></li>
+    <li><a onclick="goTo('certifications')">Certifications</a></li>
+    <li><a onclick="goTo('project')">Projet</a></li>
+    <li><a onclick="goTo('contact')">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Supply Chain · Operations · Manufacturing</p>
+    <h1 class="hero-name">Jack<br><em>Nguyen</em></h1>
+    <p class="hero-desc">
+      Operations professional with a track record of measurable results — from cutting shipping costs to programming CNC machines. MIT-certified. Based in Toronto.
+    </p>
+    <div class="hero-cta-group">
+      <a href="https://www.linkedin.com/in/jack-nguyen-canada/" target="_blank" class="btn-primary">
+        ↗ Connect on LinkedIn
+      </a>
+      <a href="mailto:jack.nguyen.canada@gmail.com" class="btn-outline">Get in touch</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="stat-row fade-in">
+      <span class="stat-number">50%</span>
+      <div class="stat-label">
+        <strong>Transportation efficiency gain</strong>
+        Achieved during peak periods at Flying Colours International
+      </div>
+    </div>
+    <div class="stat-row fade-in">
+      <span class="stat-number">20%</span>
+      <div class="stat-label">
+        <strong>Cost savings delivered</strong>
+        Identified alternative shipping strategies without sacrificing effectiveness
+      </div>
+    </div>
+    <div class="stat-row fade-in">
+      <span class="stat-number">3.8</span>
+      <div class="stat-label">
+        <strong>GPA — President's Honor List</strong>
+        Advanced Diploma, Business Administration — Seneca College
+      </div>
+    </div>
+    <div class="stat-row fade-in">
+      <span class="stat-number">2×</span>
+      <div class="stat-label">
+        <strong>MIT Supply Chain certificates</strong>
+        SC1x Fundamentals + SC3x Dynamics — completed 2024
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header fade-in">
+    <span class="section-num">01</span>
+    <h2 class="section-title">About</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="about-grid">
+    <div class="about-text fade-in">
+      I came to Canada with nothing but intent. Since then, I've built a career spanning <em>supply chain strategy, international freight, and precision manufacturing</em> — learning each domain thoroughly rather than staying on the surface.
+      <br><br>
+      My strength is connecting operational detail to business impact: I don't just ship goods or run machines — I find the inefficiencies, fix them, and document why it worked.
+    </div>
+    <div class="about-details fade-in">
+      <div class="detail-item">
+        <div class="detail-label">Location</div>
+        <div class="detail-val"><strong>Toronto, ON</strong> — Canada</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Core expertise</div>
+        <div class="detail-val"><strong>Supply Chain Management</strong> · Purchasing & Procurement · International Freight · CNC Fabrication</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Languages</div>
+        <div class="detail-val"><strong>English</strong> (proficient) · <strong>Français</strong> (en apprentissage) · Vietnamese</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Software & Systems</div>
+        <div class="detail-val">SAP ERP · SYSPRO · Mastercam · MS Office Suite · Gateway (Customs)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="experience">
+  <div class="section-header fade-in">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Experience</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="exp-list">
+
+    <div class="exp-item fade-in">
+      <div class="exp-meta">
+        <div class="exp-period">Sep 2024 – Feb 2026</div>
+        <div class="exp-company">Visual Elements<br>Woodbridge, ON</div>
+      </div>
+      <div class="exp-content">
+        <h3 class="exp-role">Metal Fabricator Apprentice</h3>
+        <ul class="exp-points">
+          <li>Operated and programmed <strong>CNC TruLaser Tube 5000 fiber, VF4SS and VF11</strong> to fabricate precision metal components</li>
+          <li>Programmed toolpaths in <strong>Mastercam</strong>; generated and edited G-code to optimize machine cycles and dimensional accuracy</li>
+          <li>Built custom jigs, fixtures, and full-scale templates for repeatable prototype fabrication and assembly</li>
+          <li>Interpreted technical drawings and blueprints; verified dimensions with calipers and precision instruments</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item fade-in">
+      <div class="exp-meta">
+        <div class="exp-period">Sep 2024</div>
+        <div class="exp-company">Magnit / Livingston International<br>Vancouver, BC</div>
+      </div>
+      <div class="exp-content">
+        <h3 class="exp-role">International Freight Forward Coordinator</h3>
+        <ul class="exp-points">
+          <li>Generated customs manifests and shipment records with accurate data entry across new and existing clients</li>
+          <li>Submitted IPROT for customs clearance — including HBL, Commercial Invoice, Packing List, and E-manifest</li>
+          <li>Monitored SSL schedules for departure, port arrival, and final delivery confirmation</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item fade-in">
+      <div class="exp-meta">
+        <div class="exp-period">Oct 2023 – Jul 2024</div>
+        <div class="exp-company">Flying Colours International<br>Toronto, ON</div>
+      </div>
+      <div class="exp-content">
+        <h3 class="exp-role">Shipping Services Manager (in training)</h3>
+        <ul class="exp-points">
+          <li>Identified alternative shipping strategies that delivered <strong>over 20% more value</strong> on several orders — same effectiveness, lower cost</li>
+          <li>Managed shipping budget, secured competitive carrier rates, and led process improvements for operational efficiency</li>
+          <li>Supervised team on duties, software compliance, and safety regulations</li>
+          <li>Resolved shipping delays and customer complaints with minimal disruption</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item fade-in">
+      <div class="exp-meta">
+        <div class="exp-period">Aug 2022 – Sep 2023</div>
+        <div class="exp-company">Flying Colours International<br>Toronto, ON</div>
+      </div>
+      <div class="exp-content">
+        <h3 class="exp-role">Shipping & Receiving Supervisor</h3>
+        <ul class="exp-points">
+          <li>Increased transportation efficiency by <strong>over 50%</strong> during peak periods through route optimization and crew scheduling</li>
+          <li>Managed shipping, receiving, storage, and distribution — zero workplace injuries across 10 months of supervision</li>
+          <li>Trained and supervised workers; ensured full compliance with safety and security standards</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header fade-in">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Areas of expertise</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-card fade-in">
+      <div class="skill-icon">⚙</div>
+      <div class="skill-name">Supply Chain & Procurement</div>
+      <p class="skill-desc">Purchasing strategy, inventory control, supplier coordination, and cost-reduction analysis from education through hands-on management roles.</p>
+      <div class="skill-tags">
+        <span class="tag">Purchasing</span>
+        <span class="tag">Inventory Control</span>
+        <span class="tag">SAP ERP</span>
+        <span class="tag">SYSPRO</span>
+      </div>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-icon">✈</div>
+      <div class="skill-name">International Freight & Customs</div>
+      <p class="skill-desc">Customs clearance submissions (IPROT), manifest generation, carrier coordination, and compliance with international shipping regulations.</p>
+      <div class="skill-tags">
+        <span class="tag">Customs Clearance</span>
+        <span class="tag">IPROT</span>
+        <span class="tag">Gateway System</span>
+        <span class="tag">HBL / E-manifest</span>
+      </div>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-icon">◈</div>
+      <div class="skill-name">CNC Programming & Fabrication</div>
+      <p class="skill-desc">Hands-on experience programming and operating industrial CNC machines. Toolpath creation, G-code editing, fixturing, and quality control with precision instruments.</p>
+      <div class="skill-tags">
+        <span class="tag">Mastercam</span>
+        <span class="tag">G-code</span>
+        <span class="tag">TruLaser 5000</span>
+        <span class="tag">VF4SS / VF11</span>
+      </div>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-icon">◎</div>
+      <div class="skill-name">Operations & Team Leadership</div>
+      <p class="skill-desc">Supervised shipping and warehouse teams, trained staff, coordinated scheduling, and enforced safety compliance — with measurable efficiency outcomes.</p>
+      <div class="skill-tags">
+        <span class="tag">Team Supervision</span>
+        <span class="tag">Route Planning</span>
+        <span class="tag">Process Improvement</span>
+        <span class="tag">Safety Compliance</span>
+      </div>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-icon">△</div>
+      <div class="skill-name">Data & Office Systems</div>
+      <p class="skill-desc">Comfortable with reporting, data entry accuracy, and software tools across enterprise and office environments.</p>
+      <div class="skill-tags">
+        <span class="tag">MS Excel</span>
+        <span class="tag">MS Outlook</span>
+        <span class="tag">PowerPoint</span>
+        <span class="tag">Word</span>
+      </div>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-icon">◇</div>
+      <div class="skill-name">Problem-Solving & Decision-Making</div>
+      <p class="skill-desc">Six Sigma mindset applied to real situations — from resolving customs delays to redesigning shipping workflows that cut costs without reducing service levels.</p>
+      <div class="skill-tags">
+        <span class="tag">Six Sigma</span>
+        <span class="tag">Root Cause Analysis</span>
+        <span class="tag">Cost Optimization</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="certs">
+  <div class="section-header fade-in">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Certifications</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="certs-grid">
+    <div class="cert-item fade-in">
+      <div class="cert-issuer">MIT · edX</div>
+      <div class="cert-name">CTL.SC1x — Supply Chain Fundamentals</div>
+      <div class="cert-date">November 2024</div>
+    </div>
+    <div class="cert-item fade-in">
+      <div class="cert-issuer">MIT · edX</div>
+      <div class="cert-name">CTL.SC3x — Supply Chain Dynamics</div>
+      <div class="cert-date">November 2024</div>
+    </div>
+    <div class="cert-item fade-in">
+      <div class="cert-issuer">CSCMP</div>
+      <div class="cert-name">Supply Chain Foundations: The Essentials — Professional Certificate</div>
+      <div class="cert-date">August 2024</div>
+    </div>
+    <div class="cert-item fade-in">
+      <div class="cert-issuer">LinkedIn Learning</div>
+      <div class="cert-name">Six Sigma Green Belt</div>
+      <div class="cert-date">March 2022</div>
+    </div>
+    <div class="cert-item fade-in">
+      <div class="cert-issuer">ILAC</div>
+      <div class="cert-name">English Language — Proficiency Level</div>
+      <div class="cert-date">August 2019</div>
+    </div>
+  </div>
+</section>
+
+<!-- FRENCH PROJECT -->
+<section id="project" class="french-project">
+  <div class="section-header fade-in">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Projet en cours</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="fp-inner">
+    <div class="fp-text fade-in">
+      <div class="fp-badge">En cours de création</div>
+      <h3 class="fp-title">A new project,<br><em>en français.</em></h3>
+      <p class="fp-desc">
+        Something new is taking shape — a project at the intersection of operations, language, and the French-Canadian professional world. Details to follow soon.
+        <br><br>
+        Curious? Reach out directly.
+      </p>
+      <br>
+      <a href="mailto:jack.nguyen.canada@gmail.com" class="btn-outline" style="margin-top:0.5rem;">
+        ↗ En savoir plus
+      </a>
+    </div>
+    <div class="fp-visual fade-in">
+      <div class="fp-flag">
+        <span style="background:#002395;"></span>
+        <span style="background:#f0f0f0;"></span>
+        <span style="background:#ed2939;"></span>
+      </div>
+      <div class="fp-content">
+        <div class="fp-coming">Bientôt</div>
+        <div class="fp-sub">Coming Soon</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION & COMMUNITY -->
+<section id="education" class="education">
+  <div class="section-header fade-in">
+    <span class="section-num">06</span>
+    <h2 class="section-title">Education & Community</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="edu-block">
+    <div class="edu-card fade-in">
+      <div class="edu-degree">Advanced Diploma — Business Administration, Purchasing & Supply Management</div>
+      <div class="edu-school">Seneca College, Toronto · 2020–2022</div>
+      <div class="edu-gpa">3.8 <span style="font-size:1rem;color:var(--ink2);">/ 4.0</span></div>
+      <div class="edu-gpa-label">Cumulative GPA</div>
+      <div class="edu-note">
+        Recognized on the President's Honor List. Focus areas: ethics, decision-making, leadership, purchasing, procurement, supply chain analysis.
+      </div>
+    </div>
+    <div class="edu-community fade-in">
+      <div class="community-item">
+        <div class="community-title">Seneca HELIX — Innovation & Entrepreneurship Incubator</div>
+        <div class="community-desc">Participated in Seneca's entrepreneurship incubator, exploring entrepreneurial mindset alongside students, graduates, and community members. Jan 2023 – 2024.</div>
+      </div>
+      <div class="community-item">
+        <div class="community-title">Community Volunteer Income Tax Program (CVITP)</div>
+        <div class="community-desc">Volunteered as a tax preparer through Seneca Student Federation — assisted individuals and families with tax filings using UFile. Strengthened problem-solving and client service skills. Mar–May 2022.</div>
+      </div>
+      <div class="community-item">
+        <div class="community-title">Usher Volunteer — St. Wilfrid's Church</div>
+        <div class="community-desc">Coordinated seating, donations, and communion processions for 100+ attendees per mass. 2019–2020.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <p class="contact-tagline fade-in">
+    Let's build something that actually works.
+  </p>
+  <p class="contact-sub fade-in">Toronto, ON · Open to new opportunities</p>
+  <div class="contact-links fade-in">
+    <a href="https://www.linkedin.com/in/jack-nguyen-canada/" target="_blank" class="contact-link linkedin">
+      ↗ LinkedIn
+    </a>
+    <a href="mailto:jack.nguyen.canada@gmail.com" class="contact-link">
+      jack.nguyen.canada@gmail.com
+    </a>
+    <a href="tel:6476082899" class="contact-link">
+      647-608-2899
+    </a>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-name">Jack Nguyen</span>
+  <span class="footer-loc">Toronto · Canada · 2025</span>
+</footer>
+
+<script>
+  function goTo(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.pageYOffset - 80;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
