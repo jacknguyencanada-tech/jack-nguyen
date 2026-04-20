@@ -294,7 +294,8 @@
 
   .exp-item {
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 160px 1fr;
+    max-width: 1100px;
     gap: 2.5rem;
     padding: 3rem 0;
     border-bottom: 1px solid var(--rule);
@@ -323,7 +324,7 @@
     font-size: 0.92rem;
     color: var(--ink2);
     line-height: 1.75;
-    max-width: 62ch;
+    max-width: 90ch;
   }
 
   .exp-summary strong { color: var(--ink); font-weight: 500; }
@@ -547,6 +548,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
+    align-items: start;
   }
 
   .edu-card {
@@ -716,7 +718,6 @@
     <li><a onclick="goTo('skills')">Skills</a></li>
     <li><a onclick="goTo('certifications')">Certifications</a></li>
     <li><a onclick="goTo('projects')">Projects</a></li>
-    <li><a onclick="goTo('project')">Projet</a></li>
     <li><a onclick="goTo('contact')">Contact</a></li>
   </ul>
 </nav>
@@ -820,7 +821,7 @@
       </div>
       <div class="exp-content">
         <h3 class="exp-role">Metal Fabricator Apprentice</h3>
-        <p class="exp-summary">Programmed and operated industrial CNC machines (TruLaser 5000, VF4SS, VF11) using Mastercam — building precision fabrication skills from toolpath design to quality inspection. A deliberate pivot into manufacturing to round out a supply chain background with hands-on technical depth.</p>
+        <p class="exp-summary">Programmed and operated industrial CNC machines (TruLaser 5000, <strong>VF4SS</strong>, <strong>VF11</strong>) using Mastercam — building precision fabrication skills from toolpath design to quality inspection. A deliberate pivot into manufacturing to round out a supply chain background with hands-on technical depth.</p>
       </div>
     </div>
 
@@ -864,7 +865,7 @@
       </div>
       <div class="exp-content">
         <h3 class="exp-role">Administrative Assistant <span style="font-size:0.9rem;color:var(--ink2);font-family:var(--sans);font-weight:300;">— Temporary Contract</span></h3>
-        <p class="exp-summary">Supported day-to-day office operations — reporting, coordination, and client-facing tasks across a trading and service environment.</p>
+        <p class="exp-summary">Supported reporting, coordination, and client-facing tasks across a trading and service environment.</p>
       </div>
     </div>
 
@@ -1003,7 +1004,9 @@
     <h2 class="section-title">Projects</h2>
     <div class="section-rule"></div>
   </div>
-  <div class="projects-grid">
+
+  <!-- World Cup Project -->
+  <div class="projects-grid" style="margin-bottom:5rem;">
     <div class="project-card fade-in">
       <span class="project-tag">Data · Sports Analytics</span>
       <h3 class="project-title">World Cup 2026 Win Probability Map</h3>
@@ -1013,17 +1016,10 @@
       <a href="https://world-cup-2026-win-probability.netlify.app/" target="_blank" class="project-link">↗ View live project</a>
     </div>
   </div>
-</section>
 
-<!-- FRENCH PROJECT -->
-<section id="project" class="french-project">
-  <div class="section-header fade-in">
-    <span class="section-num">07</span>
-    <h2 class="section-title">Projet en cours</h2>
-    <div class="section-rule"></div>
-  </div>
-  <div class="fp-inner">
-    <div class="fp-text fade-in">
+  <!-- French Project -->
+  <div class="fp-inner fade-in">
+    <div class="fp-text">
       <div class="fp-badge">En cours de création</div>
       <h3 class="fp-title">A new project,<br><em>en français.</em></h3>
       <p class="fp-desc">
@@ -1048,7 +1044,9 @@
       </div>
     </div>
   </div>
+
 </section>
+
 
 <!-- EDUCATION & COMMUNITY -->
 <section id="education" class="education">
@@ -1061,10 +1059,11 @@
     <div class="edu-card fade-in">
       <div class="edu-degree">Advanced Diploma — Business Administration, Purchasing & Supply Management</div>
       <div class="edu-school">Seneca College, Toronto · 2020–2022</div>
-      <div class="edu-gpa">3.8 <span style="font-size:1rem;color:var(--ink2);">/ 4.0</span></div>
-      <div class="edu-gpa-label">Cumulative GPA</div>
       <div class="edu-note">
         Recognized on the President's Honor List. Focus areas: ethics, decision-making, leadership, purchasing, procurement, supply chain analysis.
+      </div>
+      <div style="margin-top:1.2rem;">
+        <span style="display:inline-block;font-size:0.7rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;padding:0.3rem 0.9rem;border:1px solid var(--gold);color:var(--gold);">🏅 President's Honor List</span>
       </div>
     </div>
     <div class="edu-community fade-in">
