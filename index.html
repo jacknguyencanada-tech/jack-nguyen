@@ -318,6 +318,16 @@
     line-height: 1.4;
   }
 
+
+  .exp-summary {
+    font-size: 0.92rem;
+    color: var(--ink2);
+    line-height: 1.75;
+    max-width: 62ch;
+  }
+
+  .exp-summary strong { color: var(--ink); font-weight: 500; }
+
   .exp-content {}
 
   .exp-role {
@@ -594,6 +604,18 @@
   .community-title { font-weight: 500; font-size: 0.9rem; margin-bottom: 0.25rem; }
   .community-desc { font-size: 0.82rem; color: var(--ink2); line-height: 1.5; }
 
+
+  /* PROJECTS */
+  .projects { background: var(--white); padding: 7rem 4rem; }
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+  .project-card { background: var(--bg); border: 1px solid var(--rule); border-top: 3px solid var(--gold); padding: 2rem; display: flex; flex-direction: column; gap: 1rem; transition: border-color 0.2s, transform 0.2s; }
+  .project-card:hover { border-top-color: var(--gold-lt); transform: translateY(-3px); }
+  .project-tag { display: inline-block; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 0.2rem 0.7rem; width: fit-content; }
+  .project-title { font-family: var(--serif); font-size: 1.4rem; font-weight: 400; line-height: 1.2; }
+  .project-desc { font-size: 0.88rem; color: var(--ink2); line-height: 1.7; flex: 1; }
+  .project-link { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 0.2rem; width: fit-content; transition: color 0.2s, border-color 0.2s; }
+  .project-link:hover { color: var(--gold); border-color: var(--gold); }
+
   /* CONTACT */
   .contact {
     background: var(--bg);
@@ -693,6 +715,7 @@
     <li><a onclick="goTo('experience')">Experience</a></li>
     <li><a onclick="goTo('skills')">Skills</a></li>
     <li><a onclick="goTo('certifications')">Certifications</a></li>
+    <li><a onclick="goTo('projects')">Projects</a></li>
     <li><a onclick="goTo('project')">Projet</a></li>
     <li><a onclick="goTo('contact')">Contact</a></li>
   </ul>
@@ -731,10 +754,10 @@
       </div>
     </div>
     <div class="stat-row fade-in">
-      <span class="stat-number">3.8</span>
+      <span class="stat-number">4+</span>
       <div class="stat-label">
-        <strong>GPA — President's Honor List</strong>
-        Advanced Diploma, Business Administration — Seneca College
+        <strong>Years of hands-on experience</strong>
+        Across supply chain, international freight, and CNC manufacturing
       </div>
     </div>
     <div class="stat-row fade-in">
@@ -797,12 +820,7 @@
       </div>
       <div class="exp-content">
         <h3 class="exp-role">Metal Fabricator Apprentice</h3>
-        <ul class="exp-points">
-          <li>Operated and programmed <strong>CNC TruLaser Tube 5000 fiber, VF4SS and VF11</strong> to fabricate precision metal components</li>
-          <li>Programmed toolpaths in <strong>Mastercam</strong>; generated and edited G-code to optimize machine cycles and dimensional accuracy</li>
-          <li>Built custom jigs, fixtures, and full-scale templates for repeatable prototype fabrication and assembly</li>
-          <li>Interpreted technical drawings and blueprints; verified dimensions with calipers and precision instruments</li>
-        </ul>
+        <p class="exp-summary">Programmed and operated industrial CNC machines (TruLaser 5000, VF4SS, VF11) using Mastercam — building precision fabrication skills from toolpath design to quality inspection. A deliberate pivot into manufacturing to round out a supply chain background with hands-on technical depth.</p>
       </div>
     </div>
 
@@ -813,11 +831,7 @@
       </div>
       <div class="exp-content">
         <h3 class="exp-role">International Freight Forward Coordinator</h3>
-        <ul class="exp-points">
-          <li>Generated customs manifests and shipment records with accurate data entry across new and existing clients</li>
-          <li>Submitted IPROT for customs clearance — including HBL, Commercial Invoice, Packing List, and E-manifest</li>
-          <li>Monitored SSL schedules for departure, port arrival, and final delivery confirmation</li>
-        </ul>
+        <p class="exp-summary">Handled customs clearance end-to-end — IPROT submissions, manifests, HBL, commercial invoices — for a global freight operation. Compact role, sharp exposure to the regulatory side of international logistics.</p>
       </div>
     </div>
 
@@ -827,13 +841,8 @@
         <div class="exp-company">Flying Colours International<br>Toronto, ON</div>
       </div>
       <div class="exp-content">
-        <h3 class="exp-role">Shipping Services Manager (in training)</h3>
-        <ul class="exp-points">
-          <li>Identified alternative shipping strategies that delivered <strong>over 20% more value</strong> on several orders — same effectiveness, lower cost</li>
-          <li>Managed shipping budget, secured competitive carrier rates, and led process improvements for operational efficiency</li>
-          <li>Supervised team on duties, software compliance, and safety regulations</li>
-          <li>Resolved shipping delays and customer complaints with minimal disruption</li>
-        </ul>
+        <h3 class="exp-role">Shipping Services Manager <span style="font-size:0.9rem;color:var(--ink2);font-family:var(--sans);font-weight:300;">— in training</span></h3>
+        <p class="exp-summary">Identified an alternative shipping approach that delivered <strong>20%+ more value</strong> on several orders — same service level, lower cost. Oversaw budget, team, and carrier negotiations while developing the strategic layer on top of an already operational foundation.</p>
       </div>
     </div>
 
@@ -844,21 +853,40 @@
       </div>
       <div class="exp-content">
         <h3 class="exp-role">Shipping & Receiving Supervisor</h3>
-        <ul class="exp-points">
-          <li>Increased transportation efficiency by <strong>over 50%</strong> during peak periods through route optimization and crew scheduling</li>
-          <li>Managed shipping, receiving, storage, and distribution — zero workplace injuries across 10 months of supervision</li>
-          <li>Trained and supervised workers; ensured full compliance with safety and security standards</li>
-        </ul>
+        <p class="exp-summary">Pushed transportation efficiency up by <strong>50%</strong> during peak periods through tighter routing and crew coordination. Led the team through 10 months with zero workplace injuries — results that speak to both operational grip and people management.</p>
+      </div>
+    </div>
+
+    <div class="exp-item fade-in">
+      <div class="exp-meta">
+        <div class="exp-period">May 2022 – Aug 2022</div>
+        <div class="exp-company">NMT Trading & Service Corp<br>Toronto, ON</div>
+      </div>
+      <div class="exp-content">
+        <h3 class="exp-role">Administrative Assistant <span style="font-size:0.9rem;color:var(--ink2);font-family:var(--sans);font-weight:300;">— Temporary Contract</span></h3>
+        <p class="exp-summary">Supported day-to-day office operations — reporting, coordination, and client-facing tasks across a trading and service environment.</p>
+      </div>
+    </div>
+
+    <div class="exp-item fade-in">
+      <div class="exp-meta">
+        <div class="exp-period">Nov 2021 – May 2022</div>
+        <div class="exp-company">UPS<br>Toronto, ON</div>
+      </div>
+      <div class="exp-content">
+        <h3 class="exp-role">Warehouse Associate <span style="font-size:0.9rem;color:var(--gold);font-family:var(--sans);font-weight:300;">— Where it started</span></h3>
+        <p class="exp-summary">First step into the logistics world — loading, sorting, and handling packages inside one of the largest supply chain networks on the planet. The floor-level perspective here shaped everything that came after.</p>
       </div>
     </div>
 
   </div>
 </section>
 
+
 <!-- SKILLS -->
 <section id="skills">
   <div class="section-header fade-in">
-    <span class="section-num">03</span>
+    <span class="section-num">04</span>
     <h2 class="section-title">Areas of expertise</h2>
     <div class="section-rule"></div>
   </div>
@@ -931,10 +959,11 @@
   </div>
 </section>
 
+
 <!-- CERTIFICATIONS -->
 <section id="certifications" class="certs">
   <div class="section-header fade-in">
-    <span class="section-num">04</span>
+    <span class="section-num">05</span>
     <h2 class="section-title">Certifications</h2>
     <div class="section-rule"></div>
   </div>
@@ -967,10 +996,29 @@
   </div>
 </section>
 
+<!-- PROJECTS -->
+<section id="projects" class="projects">
+  <div class="section-header fade-in">
+    <span class="section-num">06</span>
+    <h2 class="section-title">Projects</h2>
+    <div class="section-rule"></div>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card fade-in">
+      <span class="project-tag">Data · Sports Analytics</span>
+      <h3 class="project-title">World Cup 2026 Win Probability Map</h3>
+      <p class="project-desc">
+        An interactive data visualization mapping win probabilities for all national teams competing in the 2026 FIFA World Cup. Built to make complex statistics accessible and visually intuitive — combining data analysis with a clean geographic interface.
+      </p>
+      <a href="https://world-cup-2026-win-probability.netlify.app/" target="_blank" class="project-link">↗ View live project</a>
+    </div>
+  </div>
+</section>
+
 <!-- FRENCH PROJECT -->
 <section id="project" class="french-project">
   <div class="section-header fade-in">
-    <span class="section-num">05</span>
+    <span class="section-num">07</span>
     <h2 class="section-title">Projet en cours</h2>
     <div class="section-rule"></div>
   </div>
@@ -1035,6 +1083,8 @@
     </div>
   </div>
 </section>
+
+
 
 <!-- CONTACT -->
 <section id="contact" class="contact">
