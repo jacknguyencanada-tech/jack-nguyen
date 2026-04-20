@@ -674,6 +674,64 @@
 
   .contact-link.linkedin:hover { background: var(--gold); border-color: var(--gold); }
 
+
+  .contact-form {
+    max-width: 680px;
+    margin: 3.5rem auto 0;
+    text-align: left;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink2);
+  }
+
+  .form-group input,
+  .form-group textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--rule);
+    padding: 0.6rem 0;
+    font-family: var(--sans);
+    font-size: 0.92rem;
+    font-weight: 300;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+    resize: none;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: var(--rule);
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-bottom-color: var(--gold);
+  }
+
+  @media (max-width: 900px) {
+    .form-row { grid-template-columns: 1fr; }
+  }
+
   footer {
     padding: 2rem 4rem;
     border-top: 1px solid var(--rule);
@@ -705,7 +763,65 @@
     .about-grid, .fp-inner, .edu-block, .certs-grid { grid-template-columns: 1fr; }
     .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
     .skills-grid { grid-template-columns: 1fr; }
-    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  
+  .contact-form {
+    max-width: 680px;
+    margin: 3.5rem auto 0;
+    text-align: left;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink2);
+  }
+
+  .form-group input,
+  .form-group textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--rule);
+    padding: 0.6rem 0;
+    font-family: var(--sans);
+    font-size: 0.92rem;
+    font-weight: 300;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+    resize: none;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: var(--rule);
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-bottom-color: var(--gold);
+  }
+
+  @media (max-width: 900px) {
+    .form-row { grid-template-columns: 1fr; }
+  }
+
+  footer { flex-direction: column; gap: 0.5rem; text-align: center; }
   }
 </style>
 </head>
@@ -735,7 +851,6 @@
       <a href="https://www.linkedin.com/in/jack-nguyen-canada/" target="_blank" class="btn-primary">
         ↗ Connect on LinkedIn
       </a>
-      <a href="mailto:jack.nguyen.canada@gmail.com" class="btn-outline">Get in touch</a>
     </div>
   </div>
 
@@ -1091,6 +1206,7 @@
     Let's build something that actually works.
   </p>
   <p class="contact-sub fade-in">Toronto, ON · Open to new opportunities</p>
+
   <div class="contact-links fade-in">
     <a href="https://www.linkedin.com/in/jack-nguyen-canada/" target="_blank" class="contact-link linkedin">
       ↗ LinkedIn
@@ -1102,6 +1218,35 @@
       647-608-2899
     </a>
   </div>
+
+  <form
+    action="https://formspree.io/f/mvzdbagj"
+    method="POST"
+    class="contact-form fade-in"
+  >
+    <div class="form-row">
+      <div class="form-group">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" placeholder="First and last name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Your email</label>
+        <input type="email" id="email" name="email" placeholder="email@example.com" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
+    </div>
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+    </div>
+    <div style="text-align:right;">
+      <button type="submit" class="btn-primary">↗ Send message</button>
+    </div>
+  </form>
+
 </section>
 
 <footer>
