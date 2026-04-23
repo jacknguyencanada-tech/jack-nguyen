@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -198,3 +198,1295 @@ a {
   font-size: clamp(3.1rem, 6.4vw, 5.9rem);
   max-width: 11ch;
 }
+
+.hero-copy h1 span {
+  display: block;
+  color: var(--accent-cool);
+}
+
+.hero-summary,
+.story-card p,
+.timeline-summary,
+.timeline-highlights li,
+.cert-note,
+.project-summary,
+.project-outcome,
+.education-card p,
+.community-card p,
+.contact-lead,
+.contact-list,
+.fact-card,
+.hero-card p {
+  color: var(--muted);
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+.hero-summary {
+  max-width: 52ch;
+  margin-top: 22px;
+  font-size: 1.02rem;
+}
+
+.hero-actions,
+.resume-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 160px;
+  padding: 14px 20px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button.primary {
+  background: var(--text);
+  color: #fff8ef;
+  box-shadow: 0 14px 30px rgba(31, 26, 23, 0.15);
+}
+
+.button.secondary {
+  border-color: var(--line);
+  background: rgba(255, 255, 255, 0.42);
+}
+
+.trust-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  margin: 26px 0 0;
+}
+
+.trust-list li {
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.34);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.hero-panel {
+  display: grid;
+  gap: 18px;
+  align-self: center;
+  padding-top: 36px;
+}
+
+.hero-card,
+.resume-banner,
+.story-card,
+.fact-card,
+.timeline-card,
+.expertise-card,
+.cert-card,
+.project-card,
+.education-card,
+.community-card,
+.contact-panel,
+.contact-form {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: var(--panel);
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow);
+}
+
+.expertise-card {
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.hero-card {
+  padding: 24px;
+}
+
+.hero-card-large {
+  min-height: 0;
+  background:
+    linear-gradient(135deg, rgba(208, 101, 63, 0.14), rgba(255, 255, 255, 0.35)),
+    var(--panel-strong);
+}
+
+.hero-card-angled {
+  width: 100%;
+  background:
+    linear-gradient(135deg, rgba(56, 93, 228, 0.12), rgba(255, 255, 255, 0.35)),
+    var(--panel-strong);
+}
+
+.card-label {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.hero-card h2 {
+  font-size: 1.7rem;
+  margin-bottom: 14px;
+}
+
+.metric-grid {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.metric-item {
+  padding: 14px 0;
+  border-top: 1px solid rgba(31, 26, 23, 0.08);
+}
+
+.metric-number {
+  display: block;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 2.8rem;
+  line-height: 1;
+}
+
+.metric-percent::after {
+  content: "%";
+  margin-left: 2px;
+}
+
+.metric-text {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  line-height: 1.5;
+  font-size: 0.92rem;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.floating-chip {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(31, 26, 23, 0.08);
+  color: var(--text);
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.resume-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 28px;
+  padding: 30px;
+  margin-bottom: 18px;
+  background:
+    linear-gradient(135deg, rgba(208, 101, 63, 0.1), rgba(56, 93, 228, 0.08)),
+    var(--panel-strong);
+}
+
+.resume-banner h2 {
+  font-size: clamp(1.8rem, 3.8vw, 3rem);
+  max-width: 18ch;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin-bottom: 24px;
+}
+
+.section-heading h2 {
+  font-size: clamp(2rem, 4.2vw, 3.6rem);
+}
+
+.about-layout,
+.education-grid,
+.contact-layout {
+  display: grid;
+  gap: 20px;
+}
+
+.about-layout {
+  grid-template-columns: 1.1fr 0.9fr;
+}
+
+.story-card,
+.contact-panel,
+.contact-form,
+.education-card {
+  padding: 28px;
+}
+
+.story-card p + p {
+  margin-top: 16px;
+}
+
+.profile-facts {
+  display: grid;
+  gap: 14px;
+}
+
+.fact-card {
+  padding: 20px;
+}
+
+.fact-label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.timeline {
+  display: grid;
+  gap: 18px;
+}
+
+.timeline-card {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 22px;
+  padding: 24px;
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.timeline-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.timeline-date,
+.timeline-location,
+.timeline-company,
+.cert-meta,
+.education-meta {
+  color: var(--muted);
+}
+
+.timeline-date {
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.timeline-location {
+  font-size: 0.92rem;
+}
+
+.timeline-body h3,
+.expertise-card h3,
+.cert-card h3,
+.project-card h3,
+.education-card h3,
+.community-card h3 {
+  margin: 0;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.timeline-company {
+  margin: 8px 0 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.timeline-summary {
+  margin: 0;
+}
+
+.timeline-summary strong {
+  color: var(--text);
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.tag {
+  display: inline-flex;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.56);
+  border: 1px solid rgba(31, 26, 23, 0.08);
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.expertise-grid,
+.cert-grid,
+.project-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.expertise-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.cert-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.project-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.expertise-card,
+.cert-card,
+.project-card,
+.community-card {
+  padding: 24px;
+}
+
+.expertise-card {
+  min-height: 190px;
+  border-radius: 0;
+  border: none;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 251, 245, 0.4);
+}
+
+.expertise-icon {
+  display: block;
+  margin-bottom: 20px;
+  color: var(--text);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.expertise-card h3,
+.project-card h3,
+.community-card h3 {
+  margin-bottom: 14px;
+}
+
+.cert-year,
+.project-category {
+  display: inline-flex;
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(31, 26, 23, 0.05);
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.cert-meta,
+.education-meta {
+  margin: 10px 0;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.project-summary,
+.project-outcome {
+  margin: 0 0 12px;
+}
+
+.project-link {
+  display: inline-flex;
+  margin-top: 8px;
+  font-size: 0.86rem;
+  font-weight: 800;
+  color: var(--text);
+  border-bottom: 1px solid rgba(31, 26, 23, 0.18);
+  padding-bottom: 4px;
+}
+
+.project-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.french-project {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 28px;
+  align-items: center;
+  margin-top: 28px;
+  padding: 28px 0 6px;
+}
+
+.french-copy {
+  max-width: 34ch;
+}
+
+.french-badge {
+  display: inline-flex;
+  margin-bottom: 18px;
+  padding: 8px 14px;
+  border: 1px solid rgba(208, 101, 63, 0.5);
+  color: var(--accent-deep);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.french-copy h3 {
+  margin: 0 0 16px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.02;
+}
+
+.french-copy h3 em {
+  color: var(--accent);
+  font-style: italic;
+  font-weight: 600;
+}
+
+.french-copy p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.french-note {
+  margin-top: 18px !important;
+}
+
+.french-visual {
+  position: relative;
+  min-height: 320px;
+  border: 1px solid var(--line);
+  background: rgba(255, 251, 245, 0.66);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.french-flag {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.french-flag span:nth-child(1) {
+  background: rgba(37, 62, 148, 0.12);
+}
+
+.french-flag span:nth-child(2) {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.french-flag span:nth-child(3) {
+  background: rgba(210, 81, 81, 0.12);
+}
+
+.french-visual-copy {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  min-height: 320px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.french-visual-copy strong {
+  display: block;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(2.6rem, 4vw, 4rem);
+  line-height: 1;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.french-visual-copy span {
+  display: block;
+  margin-top: 8px;
+  color: var(--accent-deep);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.education-grid {
+  grid-template-columns: 1fr 1.05fr;
+  align-items: start;
+}
+
+.community-list {
+  display: grid;
+  gap: 12px;
+}
+
+.education-card,
+.community-card {
+  box-shadow: none;
+  background: rgba(255, 251, 245, 0.72);
+}
+
+.education-card {
+  border-top: 2px solid rgba(208, 101, 63, 0.75);
+}
+
+.community-card {
+  padding: 18px 20px;
+  border-left: 2px solid rgba(208, 101, 63, 0.35);
+}
+
+.contact-layout {
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: start;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 22px 0 0;
+}
+
+.contact-list li + li {
+  margin-top: 12px;
+}
+
+.contact-list a {
+  border-bottom: 1px solid rgba(31, 26, 23, 0.18);
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.field span {
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--muted);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(31, 26, 23, 0.14);
+  background: transparent;
+  padding: 12px 0;
+  font: inherit;
+  color: var(--text);
+  outline: none;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-bottom-color: var(--accent);
+}
+
+.site-footer {
+  padding: 30px 0 42px;
+}
+
+.footer-shell {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(31, 26, 23, 0.1);
+}
+
+.footer-shell strong {
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+.footer-shell p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  color: var(--muted);
+}
+
+.reveal-alt {
+  opacity: 0;
+  transform: translateY(24px) scale(0.985);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.reveal-alt.in-view {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.delay-a {
+  transition-delay: 120ms;
+}
+
+@media (max-width: 1100px) {
+  .hero,
+  .about-layout,
+  .education-grid,
+  .contact-layout,
+  .expertise-grid,
+  .cert-grid,
+  .project-grid,
+  .french-project {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-card {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-panel {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .header-shell,
+  .resume-banner,
+  .footer-shell {
+    display: grid;
+    gap: 14px;
+  }
+
+  .site-nav {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .hero {
+    padding-top: 18px;
+  }
+
+  .hero-panel {
+    gap: 14px;
+  }
+
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .hero-actions,
+  .resume-actions {
+    flex-direction: column;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-aura" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-shell">
+      <a class="site-brand" href="#top">Jack Nguyen</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section id="top" class="hero">
+      <div class="hero-copy reveal-alt">
+        <p class="section-kicker">Toronto-based operations professional</p>
+        <h1>
+          Jack Nguyen
+          <span>Operations, Supply Chain, Logistics, and Manufacturing</span>
+        </h1>
+        <p class="hero-summary">
+          Operations professional with experience across shipping, freight coordination, customs documentation exposure,
+          and CNC fabrication. I focus on execution, efficiency, and dependable day-to-day operations.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button primary" href="#experience">View Experience</a>
+          <a class="button secondary" href="#contact">Contact</a>
+          <a class="button secondary" href="https://www.linkedin.com/in/jack-nguyen-canada/" target="_blank" rel="noreferrer">View LinkedIn</a>
+        </div>
+
+        <ul class="trust-list" aria-label="Professional highlights">
+          <li>Based in Toronto, Ontario</li>
+          <li>4+ years across operations, logistics, and manufacturing</li>
+          <li>MITx Supply Chain certificates completed in 2024</li>
+        </ul>
+      </div>
+
+      <aside class="hero-panel reveal-alt delay-a" aria-label="Professional summary card">
+        <article class="hero-card hero-card-large">
+          <p class="card-label">Core positioning</p>
+          <h2>Execution-first professional with operational range</h2>
+          <p>
+            Strongest where coordination, efficiency, documentation, and technical work need to meet.
+          </p>
+        </article>
+
+        <article class="hero-card hero-card-angled">
+          <p class="card-label">Measured outcomes</p>
+          <div class="metric-grid">
+            <div class="metric-item">
+              <span class="metric-number metric-percent" data-alt-count="50">0</span>
+              <span class="metric-text">transportation efficiency gain during peak periods</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-number metric-percent" data-alt-count="20">0</span>
+              <span class="metric-text">cost savings identified on selected shipments through alternative shipping strategies</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-number" data-alt-count="2">0</span>
+              <span class="metric-text">MITx supply chain certificates completed</span>
+            </div>
+          </div>
+        </article>
+
+        <div class="chip-row" aria-label="Specialties">
+          <div class="floating-chip">Supply chain</div>
+          <div class="floating-chip">Freight & customs</div>
+          <div class="floating-chip">CNC fabrication</div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="resume-cta" class="resume-banner reveal-alt">
+      <div>
+        <p class="section-kicker">Professional profile</p>
+        <h2>Open to connecting, learning, and opportunities where disciplined execution can create real value.</h2>
+      </div>
+      <div class="resume-actions">
+        <a class="button primary" href="#contact">Contact</a>
+        <a class="button secondary" href="https://www.linkedin.com/in/jack-nguyen-canada/" target="_blank" rel="noreferrer">Connect on LinkedIn</a>
+      </div>
+    </section>
+
+    <section id="about" class="section section-grid">
+      <div class="section-heading reveal-alt">
+        <p class="section-kicker">About</p>
+        <h2>A practical career built across operations, logistics, freight, and manufacturing.</h2>
+      </div>
+
+      <div class="about-layout">
+        <article class="story-card reveal-alt">
+          <p>
+            My career has developed through real operating environments where accuracy, reliability, and timing matter.
+            I started close to the floor, gained experience coordinating shipping activity, moved into freight and customs-related workflows,
+            and expanded into CNC programming and fabrication to deepen my technical understanding of how products and processes move in the real world.
+          </p>
+          <p>
+            That progression has shaped how I work. I am comfortable with detailed execution, process ownership, and continuous improvement.
+            I pay attention to workflow quality, documentation, handoffs, and team coordination, and I look for practical ways to improve performance without losing control of the fundamentals.
+          </p>
+        </article>
+
+        <aside class="profile-facts reveal-alt delay-a" aria-label="Professional facts">
+          <div class="fact-card">
+            <span class="fact-label">Location</span>
+            <strong>Toronto, ON, Canada</strong>
+          </div>
+          <div class="fact-card">
+            <span class="fact-label">Focus</span>
+            <strong>Operations, supply chain, logistics, and manufacturing</strong>
+          </div>
+          <div class="fact-card">
+            <span class="fact-label">Working style</span>
+            <strong>Reliable, process-aware, adaptable, execution-focused</strong>
+          </div>
+          <div class="fact-card">
+            <span class="fact-label">Systems exposure</span>
+            <strong>SAP ERP, SYSPRO, Mastercam, MS Office, Gateway, IPROT workflows</strong>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="experience" class="section section-toned">
+      <div class="section-heading reveal-alt">
+        <p class="section-kicker">Experience</p>
+        <h2>Professional experience across logistics, operations, and manufacturing.</h2>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-card reveal-alt">
+          <div class="timeline-meta">
+            <span class="timeline-date">Sep 2024 - Feb 2026</span>
+            <span class="timeline-location">Woodbridge, ON</span>
+          </div>
+          <div class="timeline-body">
+            <h3>Metal Fabricator Apprentice</h3>
+            <p class="timeline-company">Visual Elements</p>
+            <p class="timeline-summary">
+              Programmed and operated industrial CNC machines including <strong>TruLaser 5000, VF4SS, and VF11</strong> using <strong>Mastercam</strong>, building practical fabrication skills from toolpath planning to inspection and quality control.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card reveal-alt delay-a">
+          <div class="timeline-meta">
+            <span class="timeline-date">Sep 2024</span>
+            <span class="timeline-location">Vancouver, BC</span>
+          </div>
+          <div class="timeline-body">
+            <h3>International Freight Forward Coordinator</h3>
+            <p class="timeline-company">Magnit / Livingston International</p>
+            <p class="timeline-summary">
+              Supported customs and freight documentation in a regulated international logistics environment, with exposure to <strong>IPROT submissions, manifests, HBLs, and commercial invoices</strong>.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card reveal-alt">
+          <div class="timeline-meta">
+            <span class="timeline-date">Oct 2023 - Jul 2024</span>
+            <span class="timeline-location">Toronto, ON</span>
+          </div>
+          <div class="timeline-body">
+            <h3>Shipping Services Manager, In Training</h3>
+            <p class="timeline-company">Flying Colours International</p>
+            <p class="timeline-summary">
+              Supported broader shipping operations across budget, carrier, and service planning, while identifying alternative strategies that delivered <strong>20%+ more value</strong> on selected shipments.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card reveal-alt delay-a">
+          <div class="timeline-meta">
+            <span class="timeline-date">Aug 2022 - Sep 2023</span>
+            <span class="timeline-location">Toronto, ON</span>
+          </div>
+          <div class="timeline-body">
+            <h3>Shipping & Receiving Supervisor</h3>
+            <p class="timeline-company">Flying Colours International</p>
+            <p class="timeline-summary">
+              Led daily shipping and receiving activity in a fast-paced environment, improving transportation efficiency by <strong>50%</strong> during peak periods and helping maintain <strong>10 months with zero workplace injuries</strong>.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card reveal-alt">
+          <div class="timeline-meta">
+            <span class="timeline-date">May 2022 - Aug 2022</span>
+            <span class="timeline-location">Toronto, ON</span>
+          </div>
+          <div class="timeline-body">
+            <h3>Administrative Assistant</h3>
+            <p class="timeline-company">NMT Trading & Service Corp</p>
+            <p class="timeline-summary">
+              Supported reporting, coordination, and client-facing administrative work in a trading and service environment, with a focus on accuracy and consistency.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card reveal-alt delay-a">
+          <div class="timeline-meta">
+            <span class="timeline-date">Nov 2021 - May 2022</span>
+            <span class="timeline-location">Toronto, ON</span>
+          </div>
+          <div class="timeline-body">
+            <h3>Warehouse Associate</h3>
+            <p class="timeline-company">UPS</p>
+            <p class="timeline-summary">
+              Built a foundation in high-volume logistics through loading, sorting, and package movement, gaining early exposure to the pace and discipline of large-scale operations.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="expertise" class="section">
+      <div class="section-heading reveal-alt">
+        <p class="section-kicker">Areas of expertise</p>
+        <h2>A concise view of core strengths, working areas, and continuing development.</h2>
+      </div>
+
+      <div class="expertise-grid">
+        <article class="expertise-card reveal-alt">
+          <span class="expertise-icon" aria-hidden="true">⚙</span>
+          <h3>Supply Chain & Operations</h3>
+          <div class="tag-row">
+            <span class="tag">Purchasing</span>
+            <span class="tag">Inventory control</span>
+            <span class="tag">Shipping operations</span>
+            <span class="tag">Receiving</span>
+            <span class="tag">Workflow coordination</span>
+          </div>
+        </article>
+
+        <article class="expertise-card reveal-alt delay-a">
+          <span class="expertise-icon" aria-hidden="true">✈</span>
+          <h3>Logistics & Freight</h3>
+          <div class="tag-row">
+            <span class="tag">Freight coordination</span>
+            <span class="tag">Carrier communication</span>
+            <span class="tag">Routing</span>
+            <span class="tag">Shipping strategy</span>
+            <span class="tag">Service-level awareness</span>
+          </div>
+        </article>
+
+        <article class="expertise-card reveal-alt">
+          <span class="expertise-icon" aria-hidden="true">◇</span>
+          <h3>Customs / Documentation</h3>
+          <div class="tag-row">
+            <span class="tag">IPROT</span>
+            <span class="tag">Manifest workflow</span>
+            <span class="tag">Commercial invoices</span>
+            <span class="tag">HBL</span>
+            <span class="tag">Documentation accuracy</span>
+          </div>
+        </article>
+
+        <article class="expertise-card reveal-alt delay-a">
+          <span class="expertise-icon" aria-hidden="true">◈</span>
+          <h3>Manufacturing & CNC</h3>
+          <div class="tag-row">
+            <span class="tag">Mastercam</span>
+            <span class="tag">CNC programming</span>
+            <span class="tag">Machine operation</span>
+            <span class="tag">Fabrication</span>
+            <span class="tag">Quality inspection</span>
+          </div>
+        </article>
+
+        <article class="expertise-card reveal-alt">
+          <span class="expertise-icon" aria-hidden="true">△</span>
+          <h3>Tools & Systems</h3>
+          <div class="tag-row">
+            <span class="tag">SAP ERP</span>
+            <span class="tag">SYSPRO</span>
+            <span class="tag">MS Excel</span>
+            <span class="tag">Outlook</span>
+            <span class="tag">Gateway</span>
+          </div>
+        </article>
+
+        <article class="expertise-card reveal-alt delay-a">
+          <span class="expertise-icon" aria-hidden="true">◎</span>
+          <h3>Process Improvement & Leadership</h3>
+          <div class="tag-row">
+            <span class="tag">Team supervision</span>
+            <span class="tag">Cost awareness</span>
+            <span class="tag">Continuous improvement</span>
+            <span class="tag">Safety focus</span>
+            <span class="tag">Execution discipline</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="certifications" class="section section-toned">
+      <div class="section-heading reveal-alt">
+        <p class="section-kicker">Certifications</p>
+        <h2>Professional learning that supports operational and analytical credibility.</h2>
+      </div>
+
+      <div class="cert-grid">
+        <article class="cert-card reveal-alt">
+          <span class="cert-year">2024</span>
+          <h3>CTL.SC1x Supply Chain Fundamentals</h3>
+          <p class="cert-meta">MITx / edX</p>
+          <p class="cert-note">Foundational supply chain principles and systems thinking.</p>
+        </article>
+
+        <article class="cert-card reveal-alt delay-a">
+          <span class="cert-year">2024</span>
+          <h3>CTL.SC3x Supply Chain Dynamics</h3>
+          <p class="cert-meta">MITx / edX</p>
+          <p class="cert-note">Applied supply chain dynamics, performance relationships, and operating trade-offs.</p>
+        </article>
+
+        <article class="cert-card reveal-alt">
+          <span class="cert-year">2024</span>
+          <h3>Supply Chain Foundations: The Essentials</h3>
+          <p class="cert-meta">CSCMP</p>
+          <p class="cert-note">Professional context for supply chain fundamentals and business application.</p>
+        </article>
+
+        <article class="cert-card reveal-alt delay-a">
+          <span class="cert-year">2022</span>
+          <h3>Six Sigma Green Belt</h3>
+          <p class="cert-meta">LinkedIn Learning</p>
+          <p class="cert-note">Supports a structured mindset for process improvement and problem-solving.</p>
+        </article>
+
+        <article class="cert-card reveal-alt">
+          <span class="cert-year">2019</span>
+          <h3>English Language Proficiency</h3>
+          <p class="cert-meta">ILAC</p>
+          <p class="cert-note">Formal language credential supporting professional communication.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-heading reveal-alt">
+        <p class="section-kicker">Selected work</p>
+        <h2>A small selection of work, ideas, and projects in progress.</h2>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card reveal-alt">
+          <span class="project-category">Data Visualization</span>
+          <h3>World Cup 2026 Win Probability Map</h3>
+          <p class="project-summary">
+            Interactive sports analytics project designed to present complex probability data through a clean and intuitive geographic interface.
+          </p>
+          <p class="project-outcome">
+            Outcome: Demonstrates analytical thinking, structured presentation of information, and the ability to translate data into a polished digital experience.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Data storytelling</span>
+            <span class="tag">UI structure</span>
+            <span class="tag">Interactive map</span>
+          </div>
+          <a class="project-link" href="https://world-cup-2026-win-probability.netlify.app/" target="_blank" rel="noreferrer">View Live Project</a>
+        </article>
+      </div>
+
+      <div class="french-project reveal-alt">
+        <div class="french-copy">
+          <span class="french-badge">En cours de création</span>
+          <h3>A new project, <em>en français.</em></h3>
+          <p>
+            A French-language project is currently in development. It will add a bilingual dimension to the portfolio
+            and reflect the next stage of professional and language growth.
+          </p>
+          <p class="french-note">More details to follow soon.</p>
+        </div>
+
+        <div class="french-visual" aria-label="French project coming soon">
+          <div class="french-flag">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="french-visual-copy">
+            <strong>Bientôt</strong>
+            <span>Coming Soon</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section section-toned">
+      <div class="section-heading reveal-alt">
+        <p class="section-kicker">Education & community</p>
+        <h2>Education and experiences that continue to shape a practical and evolving professional foundation.</h2>
+      </div>
+
+      <div class="education-grid">
+        <article class="education-card reveal-alt">
+          <h3>Advanced Diploma, Business Administration</h3>
+          <p class="education-meta">Purchasing & Supply Management • Seneca Polytechnic • 2020-2022</p>
+          <p>
+            President's Honor List. Coursework in purchasing, procurement, ethics, leadership, and supply chain analysis.
+          </p>
+        </article>
+
+        <div class="community-list">
+          <article class="community-card reveal-alt delay-a">
+            <h3>Seneca HELIX</h3>
+            <p>Innovation and entrepreneurship incubator, 2023-2024.</p>
+          </article>
+
+          <article class="community-card reveal-alt">
+            <h3>Community Volunteer Income Tax Program</h3>
+            <p>Supported tax filing assistance through Seneca Student Federation, 2022.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="section-heading reveal-alt">
+        <p class="section-kicker">Contact</p>
+        <h2>Open to conversation, collaboration, and meaningful professional connections.</h2>
+      </div>
+
+      <div class="contact-layout">
+        <article class="contact-panel reveal-alt">
+          <p class="contact-lead">
+            I welcome thoughtful conversations with people working across operations, logistics, supply chain, manufacturing, and related fields. If you would like to connect, exchange ideas, or learn more about my work, feel free to reach out.
+          </p>
+          <ul class="contact-list">
+            <li><strong>Email:</strong> <a href="mailto:jack.nguyen.canada@gmail.com">jack.nguyen.canada@gmail.com</a></li>
+            <li><strong>Phone:</strong> <a href="tel:6476082899">647-608-2899</a></li>
+            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jack-nguyen-canada/" target="_blank" rel="noreferrer">jack-nguyen-canada</a></li>
+            <li><strong>Location:</strong> Toronto, Ontario, Canada</li>
+          </ul>
+        </article>
+
+        <form
+          class="contact-form reveal-alt delay-a"
+          action="https://formspree.io/f/mvzdbagj"
+          method="POST"
+        >
+          <div class="field-row">
+            <label class="field">
+              <span>Name</span>
+              <input type="text" name="name" placeholder="Your name" required>
+            </label>
+            <label class="field">
+              <span>Email</span>
+              <input type="email" name="email" placeholder="you@example.com" required>
+            </label>
+          </div>
+          <label class="field">
+            <span>Subject</span>
+            <input type="text" name="subject" placeholder="Reason for reaching out" required>
+          </label>
+          <label class="field">
+            <span>Message</span>
+            <textarea name="message" rows="5" placeholder="Your message" required></textarea>
+          </label>
+          <button class="button primary" type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-shell">
+      <div>
+        <strong>Jack Nguyen</strong>
+        <p>Operations, Supply Chain, Logistics, and Manufacturing</p>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:jack.nguyen.canada@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/jack-nguyen-canada/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <span>Toronto, Canada</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+const revealNodes = document.querySelectorAll(".reveal-alt");
+const countNodes = document.querySelectorAll("[data-alt-count]");
+const aura = document.querySelector(".cursor-aura");
+
+const revealObserver = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        return;
+      }
+
+      entry.target.classList.add("in-view");
+      observer.unobserve(entry.target);
+    });
+  },
+  {
+    threshold: 0.16
+  }
+);
+
+revealNodes.forEach((node) => {
+  revealObserver.observe(node);
+});
+
+const counterObserver = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        return;
+      }
+
+      const targetNode = entry.target;
+      const targetValue = Number(targetNode.dataset.altCount);
+      const duration = 1500;
+      const startTime = performance.now();
+
+      const animateCount = (now) => {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        targetNode.textContent = Math.round(targetValue * eased).toString();
+
+        if (progress < 1) {
+          requestAnimationFrame(animateCount);
+        }
+      };
+
+      requestAnimationFrame(animateCount);
+      observer.unobserve(targetNode);
+    });
+  },
+  {
+    threshold: 0.45
+  }
+);
+
+countNodes.forEach((node) => {
+  counterObserver.observe(node);
+});
+
+document.addEventListener("pointermove", (event) => {
+  if (!aura || window.matchMedia("(pointer: coarse)").matches) {
+    return;
+  }
+
+  aura.style.left = `${event.clientX}px`;
+  aura.style.top = `${event.clientY}px`;
+});
+
+  </script>
+</body>
+</html>
