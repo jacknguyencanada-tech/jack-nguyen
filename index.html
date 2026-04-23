@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -19,182 +19,182 @@
     href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Bricolage+Grotesque:wght@600;700;800&display=swap"
     rel="stylesheet"
   >
-  <link rel="stylesheet" href="styles-alt.css">
-</head>
-<body>
-  <div class="noise" aria-hidden="true"></div>
-  <div class="cursor-aura" aria-hidden="true"></div>
+  <style>
+:root {
+  --bg: #f4ecdf;
+  --bg-soft: #efe5d6;
+  --panel: rgba(255, 251, 245, 0.78);
+  --panel-strong: rgba(255, 248, 238, 0.94);
+  --text: #1f1a17;
+  --muted: #62584f;
+  --line: rgba(31, 26, 23, 0.1);
+  --accent: #d0653f;
+  --accent-deep: #9a4127;
+  --accent-cool: #385de4;
+  --shadow: 0 22px 50px rgba(63, 38, 20, 0.1);
+  --radius-xl: 34px;
+  --radius-lg: 24px;
+  --radius-md: 18px;
+  --content: min(1180px, calc(100vw - 36px));
+}
 
-  <a class="skip-link" href="#main-content">Skip to content</a>
+* {
+  box-sizing: border-box;
+}
 
-  <header class="site-header">
-    <div class="header-shell">
-      <a class="site-brand" href="#top">Jack Nguyen</a>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#expertise">Expertise</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+html {
+  scroll-behavior: smooth;
+}
 
-  <main id="main-content">
-    <section id="top" class="hero">
-      <div class="hero-copy reveal-alt">
-        <p class="section-kicker">Toronto-based operations professional</p>
-        <h1>
-          Jack Nguyen
-          <span>Operations, Supply Chain, Logistics, and Manufacturing</span>
-        </h1>
-        <p class="hero-summary">
-          Operations professional with experience across shipping, freight coordination, customs documentation exposure,
-          and CNC fabrication. I focus on execution, efficiency, and dependable day-to-day operations.
-        </p>
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: "Manrope", sans-serif;
+  background:
+    radial-gradient(circle at top right, rgba(56, 93, 228, 0.12), transparent 22%),
+    radial-gradient(circle at 15% 15%, rgba(208, 101, 63, 0.12), transparent 20%),
+    linear-gradient(180deg, #f7f0e5 0%, #f3e9dc 100%);
+  overflow-x: hidden;
+}
 
-        <div class="hero-actions">
-          <a class="button primary" href="#experience">View Experience</a>
-          <a class="button secondary" href="#contact">Contact</a>
-          <a class="button secondary" href="https://www.linkedin.com/in/jack-nguyen-canada/" target="_blank" rel="noreferrer">View LinkedIn</a>
-        </div>
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-        <ul class="trust-list" aria-label="Professional highlights">
-          <li>Based in Toronto, Ontario</li>
-          <li>4+ years across operations, logistics, and manufacturing</li>
-          <li>MITx Supply Chain certificates completed in 2024</li>
-        </ul>
-      </div>
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -40px;
+  z-index: 200;
+  padding: 10px 14px;
+  background: var(--text);
+  color: #fff;
+  border-radius: 999px;
+}
 
-      <aside class="hero-panel reveal-alt delay-a" aria-label="Professional summary card">
-        <article class="hero-card hero-card-large">
-          <p class="card-label">Core positioning</p>
-          <h2>Execution-first professional with operational range</h2>
-          <p>
-            Strongest where coordination, efficiency, documentation, and technical work need to meet.
-          </p>
-        </article>
+.skip-link:focus {
+  top: 12px;
+}
 
-        <article class="hero-card hero-card-angled">
-          <p class="card-label">Measured outcomes</p>
-          <div class="metric-grid">
-            <div class="metric-item">
-              <span class="metric-number metric-percent" data-alt-count="50">0</span>
-              <span class="metric-text">transportation efficiency gain during peak periods</span>
-            </div>
-            <div class="metric-item">
-              <span class="metric-number metric-percent" data-alt-count="20">0</span>
-              <span class="metric-text">cost savings identified on selected shipments through alternative shipping strategies</span>
-            </div>
-            <div class="metric-item">
-              <span class="metric-number" data-alt-count="2">0</span>
-              <span class="metric-text">MITx supply chain certificates completed</span>
-            </div>
-          </div>
-        </article>
+.noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+  background-size: 14px 14px;
+}
 
-        <div class="chip-row" aria-label="Specialties">
-          <div class="floating-chip">Supply chain</div>
-          <div class="floating-chip">Freight & customs</div>
-          <div class="floating-chip">CNC fabrication</div>
-        </div>
-      </aside>
-    </section>
+.cursor-aura {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 280px;
+  margin-left: -140px;
+  margin-top: -140px;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.28;
+  background: radial-gradient(circle, rgba(208, 101, 63, 0.25), rgba(208, 101, 63, 0));
+  mix-blend-mode: multiply;
+  z-index: 0;
+}
 
-    <section id="resume-cta" class="resume-banner reveal-alt">
-      <div>
-        <p class="section-kicker">Recruiter-ready summary</p>
-        <h2>Open to connecting, learning, and opportunities where disciplined execution can create real value.</h2>
-      </div>
-      <div class="resume-actions">
-        <a class="button primary" href="#contact">Contact</a>
-        <a class="button secondary" href="https://www.linkedin.com/in/jack-nguyen-canada/" target="_blank" rel="noreferrer">Connect on LinkedIn</a>
-      </div>
-    </section>
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(14px);
+}
 
-    <section id="about" class="section section-grid">
-      <div class="section-heading reveal-alt">
-        <p class="section-kicker">About</p>
-        <h2>A practical career built across operations, logistics, freight, and manufacturing.</h2>
-      </div>
+.header-shell,
+.hero,
+.section,
+.resume-banner,
+.site-footer {
+  width: var(--content);
+  margin: 0 auto;
+}
 
-      <div class="about-layout">
-        <article class="story-card reveal-alt">
-          <p>
-            My career has developed through real operating environments where accuracy, reliability, and timing matter.
-            I started close to the floor, gained experience coordinating shipping activity, moved into freight and customs-related workflows,
-            and expanded into CNC programming and fabrication to deepen my technical understanding of how products and processes move in the real world.
-          </p>
-          <p>
-            That progression has shaped how I work. I am comfortable with detailed execution, process ownership, and continuous improvement.
-            I pay attention to workflow quality, documentation, handoffs, and team coordination, and I look for practical ways to improve performance without losing control of the fundamentals.
-          </p>
-        </article>
+.header-shell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0 16px;
+}
 
-        <aside class="profile-facts reveal-alt delay-a" aria-label="Professional facts">
-          <div class="fact-card">
-            <span class="fact-label">Location</span>
-            <strong>Toronto, ON, Canada</strong>
-          </div>
-          <div class="fact-card">
-            <span class="fact-label">Focus</span>
-            <strong>Operations, supply chain, logistics, and manufacturing</strong>
-          </div>
-          <div class="fact-card">
-            <span class="fact-label">Working style</span>
-            <strong>Reliable, process-aware, adaptable, execution-focused</strong>
-          </div>
-          <div class="fact-card">
-            <span class="fact-label">Systems exposure</span>
-            <strong>SAP ERP, SYSPRO, Mastercam, MS Office, Gateway, IPROT workflows</strong>
-          </div>
-        </aside>
-      </div>
-    </section>
+.site-brand {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
 
-    <section id="experience" class="section section-toned">
-      <div class="section-heading reveal-alt">
-        <p class="section-kicker">Experience</p>
-        <h2>Professional experience across logistics, operations, and manufacturing.</h2>
-      </div>
+.site-nav {
+  display: flex;
+  gap: 22px;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
 
-      <div class="timeline">
-        <article class="timeline-card reveal-alt">
-          <div class="timeline-meta">
-            <span class="timeline-date">Sep 2024 - Feb 2026</span>
-            <span class="timeline-location">Woodbridge, ON</span>
-          </div>
-          <div class="timeline-body">
-            <h3>Metal Fabricator Apprentice</h3>
-            <p class="timeline-company">Visual Elements</p>
-            <p class="timeline-summary">
-              Expanded from supply chain and logistics into hands-on manufacturing by programming and operating CNC equipment
-              and building practical fabrication knowledge from setup through quality control.
-            </p>
-            <ul class="achievement-list">
-              <li>Programmed and operated industrial CNC machines including TruLaser 5000, VF4SS, and VF11.</li>
-              <li>Used Mastercam to build toolpaths and support accurate machining and fabrication workflows.</li>
-              <li>Strengthened understanding of fixturing, machine setup, inspection, and production discipline.</li>
-              <li>Built technical depth that complements prior experience in supply chain and operations.</li>
-            </ul>
-            <div class="tag-row">
-              <span class="tag">Mastercam</span>
-              <span class="tag">TruLaser 5000</span>
-              <span class="tag">VF4SS</span>
-              <span class="tag">VF11</span>
-              <span class="tag">Quality control</span>
-            </div>
-          </div>
-        </article>
+.site-nav a:hover {
+  color: var(--text);
+}
 
-        <article class="timeline-card reveal-alt delay-a">
-          <div class="timeline-meta">
-            <span class="timeline-date">Sep 2024</span>
-            <span class="timeline-location">Vancouver, BC</span>
-          </div>
-          <div class="timeline-body">
-            <h3>International Freight Forward Coordinator</h3>
-            <p class="timeline-company">Magnit / Livingston International</p>
-            <p class="timeline-summary">
-              Supported international freight operations with exposure to customs clearance and shipment documentation in a regulated logistics environment.
-            </p>
+.hero {
+  min-height: calc(100vh - 86px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
+  gap: 40px;
+  align-items: start;
+  padding: 34px 0 54px;
+}
+
+.section {
+  padding: 58px 0 24px;
+}
+
+.section-toned {
+  position: relative;
+}
+
+.section-toned::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 22px;
+  transform: translateX(-50%);
+  width: var(--content);
+  height: calc(100% - 44px);
+  border-radius: var(--radius-xl);
+  background: rgba(255, 249, 241, 0.5);
+  border: 1px solid rgba(31, 26, 23, 0.06);
+  z-index: -1;
+}
+
+.section-kicker {
+  margin: 0 0 14px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.hero-copy h1,
+.section-heading h2,
+.resume-banner h2,
+.hero-card h2 {
+  margin: 0;
+  font-family: "Bricolage Grotesque", sans-serif;
+  line-height: 0.96;
+}
+
+.hero-copy h1 {
+  font-size: clamp(3.1rem, 6.4vw, 5.9rem);
+  max-width: 11ch;
+}
