@@ -1119,7 +1119,49 @@ a {
   50% { transform: scale(1.06); }
 }
 
+.orb-stage {
+  position: relative;
+  height: 280px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 40%, #2b2420, #1f1a17);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.orb-stage spline-viewer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.orb-stage.has-scene .orb {
+  display: none;
+}
+
+.orb {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ffd7c6, #d0653f 45%, #385de4 100%);
+  box-shadow: 0 0 60px rgba(208, 101, 63, 0.55), 0 0 120px rgba(56, 93, 228, 0.35);
+  translate: calc(var(--mx, 0) * 22px) calc(var(--my, 0) * 22px);
+  transition: translate 200ms ease-out;
+  animation: orbFloat 6s ease-in-out infinite;
+}
+
+@keyframes orbFloat {
+  0%, 100% { transform: translateY(-6px) scale(1); }
+  50% { transform: translateY(8px) scale(1.06); }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .orb { animation: none; }
   .tile.on, .app-badge i { animation: none; }
   .app-window { transition: none; }
 }
@@ -1183,6 +1225,10 @@ a {
       </div>
 
       <aside class="hero-panel reveal-alt delay-a" aria-label="Professional summary card">
+        <div class="orb-stage" id="orbStage" aria-hidden="true">
+          <div class="orb"></div>
+        </div>
+
         <article class="hero-card hero-card-large">
           <p class="card-label">Core positioning</p>
           <h2>Execution-first professional with operational range</h2>
@@ -1706,6 +1752,38 @@ document.addEventListener("pointermove", (event) => {
   aura.style.left = `${event.clientX}px`;
   aura.style.top = `${event.clientY}px`;
 });
+
+/* ---- 3D orb (Spline) ----
+   Paste your Spline public scene URL between the quotes, e.g.
+   "https://prod.spline.design/XXXXXXXX/scene.splinecode"
+   While it is empty, a CSS orb that follows your cursor is shown instead. */
+const SPLINE_SCENE_URL = "https://prod.spline.design/3A0gdGPanQ5j5CLw/scene.splinecode";
+
+const orbStage = document.getElementById("orbStage");
+
+if (orbStage) {
+  if (SPLINE_SCENE_URL) {
+    const loader = document.createElement("script");
+    loader.type = "module";
+    loader.src = "https://cdn.jsdelivr.net/npm/@splinetool/viewer@1.9.28/build/spline-viewer.js";
+    document.head.appendChild(loader);
+
+    const viewer = document.createElement("spline-viewer");
+    viewer.setAttribute("url", SPLINE_SCENE_URL);
+    orbStage.appendChild(viewer);
+    orbStage.classList.add("has-scene");
+  } else {
+    orbStage.addEventListener("pointermove", (event) => {
+      const rect = orbStage.getBoundingClientRect();
+      orbStage.style.setProperty("--mx", (((event.clientX - rect.left) / rect.width) - 0.5) * 2);
+      orbStage.style.setProperty("--my", (((event.clientY - rect.top) / rect.height) - 0.5) * 2);
+    });
+    orbStage.addEventListener("pointerleave", () => {
+      orbStage.style.setProperty("--mx", 0);
+      orbStage.style.setProperty("--my", 0);
+    });
+  }
+}
   </script>
 </body>
 </html>
