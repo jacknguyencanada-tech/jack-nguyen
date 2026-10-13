@@ -926,6 +926,215 @@ a {
   }
 }
 
+.app-feature {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 44px;
+  align-items: center;
+  margin-top: 28px;
+  padding: 48px 44px 44px;
+  border-radius: var(--radius-xl);
+  background: #1f1a17;
+  color: #fff8ef;
+  box-shadow: var(--shadow);
+}
+
+.app-feature::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #385de4 0 33.3%, #fff8ef 33.3% 66.6%, #d0653f 66.6% 100%);
+}
+
+.app-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 248, 239, 0.25);
+  color: #f3b79f;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.app-badge i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #5ddc8a;
+  box-shadow: 0 0 0 0 rgba(93, 220, 138, 0.6);
+  animation: livePulse 2s infinite;
+}
+
+.app-copy h3 {
+  margin: 0 0 16px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(2.2rem, 4.4vw, 3.4rem);
+  line-height: 1;
+}
+
+.app-copy h3 em {
+  display: block;
+  color: #f08a63;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.app-copy p {
+  margin: 0;
+  max-width: 46ch;
+  color: rgba(255, 248, 239, 0.74);
+  line-height: 1.75;
+}
+
+.app-copy .tag {
+  background: rgba(255, 248, 239, 0.08);
+  border-color: rgba(255, 248, 239, 0.16);
+  color: rgba(255, 248, 239, 0.78);
+}
+
+.app-actions {
+  margin-top: 28px;
+}
+
+.app-feature + .project-grid {
+  margin-top: 18px;
+}
+
+.app-feature .button.primary {
+  background: #fff8ef;
+  color: #1f1a17;
+  box-shadow: none;
+}
+
+.app-window {
+  display: block;
+  border-radius: 22px;
+  background: #2a231f;
+  border: 1px solid rgba(255, 248, 239, 0.14);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  transform: rotate(1.5deg);
+  transition: transform 300ms ease;
+}
+
+.app-window:hover {
+  transform: rotate(0deg) translateY(-4px);
+}
+
+.app-bar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255, 248, 239, 0.1);
+}
+
+.app-bar span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 248, 239, 0.25);
+}
+
+.app-bar em {
+  margin-left: 10px;
+  font-style: normal;
+  font-size: 0.74rem;
+  color: rgba(255, 248, 239, 0.5);
+}
+
+.app-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 20px;
+}
+
+.tile {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 3;
+  border-radius: 14px;
+  background: rgba(255, 248, 239, 0.06);
+  border: 1px solid rgba(255, 248, 239, 0.12);
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: rgba(255, 248, 239, 0.85);
+}
+
+.tile.fr {
+  border-color: rgba(56, 93, 228, 0.55);
+}
+
+.tile.on {
+  color: #fff;
+  animation: matchGlow 2.4s ease-in-out infinite;
+}
+
+.tile.fr.on {
+  background: #385de4;
+  border-color: #385de4;
+}
+
+.tile.en.on {
+  background: #d0653f;
+  border-color: #d0653f;
+}
+
+.app-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px 18px;
+  border-top: 1px solid rgba(255, 248, 239, 0.1);
+  color: rgba(255, 248, 239, 0.7);
+  font-size: 0.88rem;
+}
+
+.app-foot strong {
+  color: #5ddc8a;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+@keyframes livePulse {
+  70% { box-shadow: 0 0 0 9px rgba(93, 220, 138, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(93, 220, 138, 0); }
+}
+
+@keyframes matchGlow {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tile.on, .app-badge i { animation: none; }
+  .app-window { transition: none; }
+}
+
+@media (max-width: 900px) {
+  .app-feature {
+    grid-template-columns: 1fr;
+    padding: 40px 24px 28px;
+    gap: 32px;
+  }
+
+  .app-window {
+    transform: none;
+  }
+}
   </style>
 </head>
 <body>
@@ -1280,7 +1489,42 @@ a {
     <section id="projects" class="section">
       <div class="section-heading reveal-alt">
         <p class="section-kicker">Selected work</p>
-        <h2>A small selection of work, ideas, and projects in progress.</h2>
+        <h2>A small selection of work and projects.</h2>
+      </div>
+
+      <div class="app-feature reveal-alt">
+        <div class="app-copy">
+          <span class="app-badge"><i></i>Nouveau · Live</span>
+          <h3>Tiger Match <em>Français.</em></h3>
+          <p>
+            A French-language matching app, built to make practising French feel more like play.
+            It adds a bilingual dimension to this portfolio and marks the next stage of my language growth.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Bilingual</span>
+            <span class="tag">Interactive web app</span>
+            <span class="tag">Self-built</span>
+          </div>
+          <div class="app-actions">
+            <a class="button primary" href="https://tiger-match-francais-v2.netlify.app/" target="_blank" rel="noreferrer">Launch the app →</a>
+          </div>
+        </div>
+
+        <a class="app-window" href="https://tiger-match-francais-v2.netlify.app/" target="_blank" rel="noreferrer" aria-label="Open Tiger Match Français">
+          <div class="app-bar" aria-hidden="true">
+            <span></span><span></span><span></span>
+            <em>tiger-match-francais</em>
+          </div>
+          <div class="app-board" aria-hidden="true">
+            <div class="tile fr on">tigre</div>
+            <div class="tile">chien</div>
+            <div class="tile fr">lion</div>
+            <div class="tile">cat</div>
+            <div class="tile en on">tiger</div>
+            <div class="tile fr">chat</div>
+          </div>
+          <div class="app-foot" aria-hidden="true"><span>🐯 tigre ↔ tiger</span><strong>Match!</strong></div>
+        </a>
       </div>
 
       <div class="project-grid">
@@ -1300,30 +1544,6 @@ a {
           </div>
           <a class="project-link" href="https://world-cup-2026-win-probability.netlify.app/" target="_blank" rel="noreferrer">View Live Project</a>
         </article>
-      </div>
-
-      <div class="french-project reveal-alt">
-        <div class="french-copy">
-          <span class="french-badge">En cours de création</span>
-          <h3>A new project, <em>en français.</em></h3>
-          <p>
-            A French-language project is currently in development. It will add a bilingual dimension to the portfolio
-            and reflect the next stage of professional and language growth.
-          </p>
-          <p class="french-note">More details to follow soon.</p>
-        </div>
-
-        <div class="french-visual" aria-label="French project coming soon">
-          <div class="french-flag">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <div class="french-visual-copy">
-            <strong>Bientôt</strong>
-            <span>Coming Soon</span>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -1486,7 +1706,6 @@ document.addEventListener("pointermove", (event) => {
   aura.style.left = `${event.clientX}px`;
   aura.style.top = `${event.clientY}px`;
 });
-
   </script>
 </body>
 </html>
